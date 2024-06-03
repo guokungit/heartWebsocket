@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebSocket Client</title>
+</head>
+<body>
+  <input type="text" id="messageInput">
+  <button onclick="sendMessage1()">Send</button>
+  <div id="messageOutput"></div>
+  <input type="file">上传文件</file>
+  <div id="canvasContainer"></div>
+  <script src="./websocket/WebSocketService.js"></script>
+  <script>
+    const ws = new WebSocketService('ws://localhost:8080');
+    console.log('geturl',ws.getUrl());
+    // var canvasContainer = document.getElementById('canvasContainer'); 
+    // var canvas = document.createElement('canvas');  
+    // canvas.width = 400; // 设置Canvas的宽度  
+    // canvas.height = 400; // 设置Canvas的高度  
+    // canvas.style.border = '1px solid black'; // 添加边框以便看到Canvas的边界  
+  
+      
+    // // 获取Canvas的2D渲染上下文  
+    // var ctx = canvas.getContext('2d');  
+      
+    // // 绘制圆的参数  
+    // var centerX = canvas.width / 2; // 圆心x坐标  
+    // var centerY = canvas.height / 2; // 圆心y坐标  
+    // var radius = 50; // 圆的半径  
+      
+    // // 开始绘制路径  
+    // ctx.beginPath();  
+      
+    // // 绘制圆  
+    // ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);  
+      
+    // // 设置填充颜色并填充圆  
+    // ctx.fillStyle = 'blue';  
+    // ctx.fill();  
+      
+    // // 如果你需要描边圆，可以添加以下代码  
+    // ctx.strokeStyle = 'black'; // 设置描边颜色  
+    // ctx.lineWidth = 2; // 设置描边宽度  
+    // ctx.stroke(); // 描边  
+    
+//     const webSocket = new WebSocket('ws://localhost:8080');
+
+//     webSocket.onopen = function(event) {
+//       console.log('Connected to WebSocket server',event);
+//     };
+
+//     webSocket.onmessage = function(event) {
+//       console.log('Received message:', event.data);
+      
+//       document.getElementById('messageOutput').innerHTML += '<p>Received: ' + event.data + '</p>';
+//       var base64ImageData = event.data; // 假设服务器返回的是 Base64 编码的图像数据  
+  
+//   // 将 Base64 编码的图像数据转换为 Blob 对象  
+//   var blob = dataURItoBlob(base64ImageData);  
+//   var image = new Image();  
+
+//   // 图像加载完成后绘制到 Canvas 上  
+//   image.onload = function() {  
+//       ctx.clearRect(0, 0, canvas.width, canvas.height); // 清除画布上的内容  
+//       ctx.drawImage(image, 0, 0); // 绘制图像到画布上  
+//   };  
+
+//       // 设置图像的源为 Blob URL  
+//       image.src = URL.createObjectURL(blob);  
+//       // 将 Base64 编码的字符串转换为 Blob 对象  
+//       function dataURItoBlob(dataURI) {  
+//           var byteString = window.atob(dataURI.split(',')[1]);  
+//           var ab = new ArrayBuffer(byteString.length);  
+//           var ia = new Uint8Array(ab);  
+//           for (var i = 0; i < byteString.length; i++) {  
+//               ia[i] = byteString.charCodeAt(i);  
+//           }  
+//           return new Blob([ab], {type: 'image/png'});  
+//       } 
+//       ctx.drawImage(image)
+//       canvasContainer.appendChild(canvas); // 将Canvas添加到容器中  
+//     };
+
+//     function sendMessage() {
+//       const message = document.getElementById('messageInput').value;
+//       var imageData = ctx.getImageData(0, 0,canvas.width, canvas.height);
+//      // 将 ImageData 对象转换为 Base64 编码的字符串  
+// function imageDataToBase64(imageData) {  
+//     var dataUrl = canvas.toDataURL('image/png');  
+//     return dataUrl.replace(/^data:image\/png;base64,/, "");  
+// }  
+  
+// var base64ImageData = imageDataToBase64(imageData);  
+//       webSocket.send(base64ImageData);
+//       console.log('Sent message:', message);
+//       document.getElementById('messageOutput').innerHTML += '<p>Sent: ' + message + '</p>';
+//       document.getElementById('messageInput').value = '';
+//     }
+  </script>
+</body>
+</html>
